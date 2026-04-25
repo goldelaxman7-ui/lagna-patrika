@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f8f1d4;
+    color:#4a2c2a;
+    overflow-x:hidden;
+}
+
+
+
+section{
+    position:relative;
+    z-index:1;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.hero{
+    background: url("vivahnimantran.jpg") center center/cover no-repeat;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+} 
+
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+}
+
+.hero *{
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1{
+    font-size:60px;
+    font-family:'Great Vibes', cursive;
+    color:#ffd700;
+}
+
+.hero h2{
+    font-size:28px;
+    margin:20px 0;
+}
+
+.hero p{
+    font-size:18px;
+    margin:10px 0;
+}
+
+.title{
+    font-size:38px;
+    font-family:'Great Vibes', cursive;
+    color:#7a2d2d;
+    margin-bottom:20px;
+}
+
+.story img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:15px 0;
+    border:5px solid #d4af37;
+}
+
+.events{
+    background:#4a0d0d;
+    color:white;
+}
+
+.card{
+    background:#6b1111;
+    padding:20px;
+    border-radius:15px;
+    margin:20px auto;
+    max-width:500px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card h3{
+    color:#ffd700;
+    margin-bottom:10px;
+}
+
+.video-ashirvad{
+    position: relative;
+    width: 100vw;
+    min-height: 200px;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    padding: 40px 0 80px 0;
+}
+
+.video-ashirvad .bg-video{
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.video-ashirvad .video-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.40);
+    z-index: 1;
+}
+
+.video-ashirvad .video-content{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    padding: 0 20px;
+}
+.video-ashirvad{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    min-height: 200px !important;
+}
+
+.video-ashirvad .bg-video{
+    top: 50% !important;
+}
+.map iframe{
+    width:100%;
+    max-width:700px;
+    height:300px;
+    border:none;
+    border-radius:15px;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 8px;
+    padding: 14px 28px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 0 15px rgba(212,175,55,0.35);
+    transition: 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+}
+
+.video-bless{
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    color: white;
+    padding-top: 0;
+}
+
+.video-bless .bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.video-bless .video-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+.video-bless .video-content{
+    position: relative;
+    z-index: 2;
+}
+
+.video-bless p{
+    color: white;
+    font-size: 18px;
+    line-height: 1.8;
+}
+.video-story{
+    position: relative;
+    overflow: hidden;
+    min-height: 900px;
+    color: white;
+}
+
+.video-story .bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.video-story .video-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.video-story .video-content{
+    position: relative;
+    z-index: 2;
+}
+
+.video-story p,
+.video-story h3{
+    color: white;
+}
+.video-events{
+    position: relative;
+    overflow: hidden;
+    min-height: 900px;
+    color: white;
+}
+
+.video-events .bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.video-events .video-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.video-events .video-content{
+    position: relative;
+    z-index: 2;
+}
+
+.video-events p,
+.video-events h3{
+    color: white;
+}
+
+.video-events{
+    background: url("vivahsohala.jpg") center center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    min-height: 900px;
+    color: white;
+}
+
+.video-events::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+}
+
+.video-events .video-content{
+    position: relative;
+    z-index: 2;
+}
+.common-bg{
+    background: url("commen.jpg") center center/cover no-repeat;
+    position: relative;
+    color: white;
+}
+
+.common-bg::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    z-index: 0;
+}
+
+.common-bg *{
+    position: relative;
+    z-index: 1;
+}
+.map .title,
+.story .title{
+    color: #ffd700 !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+.map{
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.map iframe{
+    display: block;
+    margin-bottom: 0;
+}
+
+.video-ashirvad{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+.map{
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.map iframe{
+    display: block;
+    margin-bottom: 0;
+}
+
+.video-ashirvad{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.video-ashirvad .video-content{
+    padding-top: 40px !important;
+}
+.btn{
+    outline: none;
+}
+
+.btn:focus,
+.btn:active{
+    outline: none;
+    box-shadow: none;
+}
+
+#musicBtn{
+    outline: none;
+}
+
+#musicBtn:focus,
+#musicBtn:active{
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+.btn,
+.btn:focus,
+.btn:active,
+.btn:visited{
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:focus,
+.btn:active{
+    box-shadow: 0 0 15px rgba(212,175,55,0.35) !important;
+}
+
+#musicBtn,
+#musicBtn:focus,
+#musicBtn:active{
+    outline: none !important;
+    border: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#musicBtn:focus,
+#musicBtn:active{
+    box-shadow: 0 0 10px rgba(212,175,55,0.95) !important;
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <p>॥ शुभ विवाह निमंत्रण ॥</p>
+    <p>श्री गणेशाय नमः</p>
+    <p>वक्रतुंड महाकाय सूर्यकोटि समप्रभ।</p>
+    <p>निर्विघ्नं कुरुमे देव सर्वकार्येषु सर्वदा॥</p>
+
+    <h1 style="line-height:1.6;">
+        ज्ञानेश्वरी
+        <br>
+
+        <span style="
+            display:inline-block;
+            color:#ffd700;
+            font-size:70px;
+            padding:10px 0;
+            font-family:'Poppins', sans-serif;
+        ">
+            卐
+        </span>
+
+        <br>
+        रोहन
+    </h1>
+    <h2>शुभ विवाह सोहळा</h2>
+
+    <p>सस्नेह निमंत्रण</p>
+    <p>विवाह दिनांक: ०१ / ०५ / २०२६</p>
+    <p>स्थळ: कालिंका माता मंदिर, आखाडा रेवगाव</p>
+
+</section>
+
+<!-- Our Story -->
+<section class="story video-story">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="vadhuvarparichay.mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="video-overlay"></div>
+
+    <!-- Content -->
+    <div class="video-content">
+
+        <div class="title" style="color:#ffd700;">वधू - वर परिचय</div>
+
+        <img src="navari.jpg" alt="Bride">
+        <h3>चि.सौ.कां. ज्ञानेश्वरी</h3>
+        <p>
+            (श्री. मारोती विश्वनाथ टकले पा. यांची नात व
+            कै. रामकिसन मारुती टकले पा. यांची ज्येष्ठ कन्या,
+            रा. रामनगर ता. जि. जालना.)
+        </p>
+
+        <br><br>
+
+        <img src="navardev.jpg" alt="Groom">
+        <h3>चि. रोहन</h3>
+        <p>
+            (श्री. संभाजी रामनाथ मुळे पा. यांचे पुतणे व
+            श्री. जगन्नाथ रामनाथ मुळे पा. यांचे द्वितीय चिरंजीव,
+            रा. बाचेगाव ता. घनसावंगी जि. जालना.)
+        </p>
+
+    </div>
+</section>
+
+<!-- Events -->
+<section class="events video-events" id="events">
+
+    
+
+    <!-- Content -->
+    <div class="video-content">
+
+        <div class="title" style="color:#ffd700;">विवाह सोहळा</div>
+
+        <div class="card">
+            <h3>हळद समारंभ</h3>
+            <p>तारीख: गुरुवार, दि. ३०/०४/२०२६</p>
+            <p>वेळ: सायंकाळी ०७:०० वा.</p>
+            <p>स्थळ: राहत्या घरी, रेवगाव</p>
+        </div>
+
+        <div class="card">
+            <h3>शुभ विवाह</h3>
+            <p>तारीख: शुक्रवार, दि. ०१/०५/२०२६</p>
+            <p>वेळ: दुपारी १२:४६ मि.</p>
+            <p>शुभ मुहूर्तावर करण्याचे योजीले आहे</p>
+        </div>
+
+        <div class="card">
+            <h3>विवाहस्थळ</h3>
+            <p>कालिंका माता मंदिर</p>
+            <p>आखाडा रेवगाव</p>
+            <p>ता. जि. जालना</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Blessings -->
+<section class="bless video-bless">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="pinkbackground.mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="video-overlay"></div>
+
+    <!-- Content -->
+    <div class="video-content">
+        <div class="title" style="color:#ffd700;">निमंत्रक</div>
+
+        <p>श्री. मारोतीराव विश्वनाथ पा. टकले</p>
+        <p>श्री. इंद्रजीत बाबुराव पा. टकले</p>
+        <p>श्री. भगवान बाबुराव पा. टकले</p>
+        <p>ची. बालाजी इंद्रजीत पा. टकले</p>
+        <p>ची. गणेश इंद्रजीत पा. टकले</p>
+        <p>ची. ईश्वर भगवान पा. टकले</p>
+        <p>ची. किरण भगवान पा. टकले</p>
+        <p>ची. गौरव रामकिसन पा. टकले</p>
+
+        <br>
+
+        <p><strong>समस्त टकले पाटील परिवार</strong></p>
+    </div>
+
+</section>
+
+<!-- RSVP Text -->
+<section class="events">
+    <div class="title" style="color:#ffd700;">आपले सहर्ष स्वागत आहे</div>
+
+    <div class="card" style="max-width:700px; background:#7a0c0c; border:1px solid #b8860b;">
+        <p style="font-size:18px; line-height:1.8;">
+            तरी आपण सहकुटुंब सहपरिवार उपस्थित राहून
+            वधू - वरांना आशीर्वाद द्यावेत,
+            ही नम्र विनंती.
+        </p>
+    </div>
+</section>
+
+<!-- Premium Countdown Section -->
+<section class="events">
+    <div class="title" style="color:#ffd700;">शुभ विवाह मुहूर्त</div>
+
+    <div class="card" style="
+        max-width:850px;
+        background:linear-gradient(135deg,#5a0000,#7a0c0c);
+        border:2px solid #d4af37;
+        padding:40px 25px;
+        border-radius:20px;
+        box-shadow:0 15px 35px rgba(0,0,0,0.35);
+    ">
+
+        <p style="
+            font-size:20px;
+            color:#fff;
+            margin-bottom:25px;
+            line-height:1.8;
+        ">
+            आपल्या शुभ उपस्थितीची आतुरतेने वाट पाहत आहोत
+        </p>
+
+        <h2 id="countdown" style="
+            font-size:34px;
+            color:#ffd700;
+            font-weight:700;
+            line-height:1.8;
+            letter-spacing:1px;
+        ">
+            Loading...
+        </h2>
+
+        <p style="
+            margin-top:25px;
+            font-size:18px;
+            color:#ffffff;
+        ">
+            💛 ०१ मे २०२६ • दुपारी १२:४६ 💛
+        </p>
+
+    </div>
+</section>
+
+<script>
+const weddingDate = new Date("May 1, 2026 12:46:00").getTime();
+
+const countdownFunction = setInterval(function () {
+
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        days + " दिवस <br>" +
+        hours + " तास • " +
+        minutes + " मिनिटे • " +
+        seconds + " सेकंद बाकी";
+
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML =
+            "💐 आज शुभ विवाह सोहळा आहे 💐";
+    }
+
+}, 1000);
+</script>
+
+<!-- Couple Gallery Section -->
+<section class="story common-bg">
+    <div class="title">आमचे सुंदर क्षण</div>
+
+    <div class="gallery-box" style="
+    max-width:950px;
+        margin:auto;
+        overflow:hidden;
+        border-radius:20px;
+        border:3px solid #d4af37;
+        box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    ">
+                          <div class="slider">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <img src="photo5.jpg">
+    <img src="photo6.jpg">
+    <img src="photo7.jpg">
+    <img src="photo8.jpg">
+    <img src="photo9.jpg">
+    <img src="photo10.jpg">
+
+    <!-- पुन्हा repeat -->
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <img src="photo5.jpg">
+    <img src="photo6.jpg">
+    <img src="photo7.jpg">
+    <img src="photo8.jpg">
+    <img src="photo9.jpg">
+    <img src="photo10.jpg">
+    
+    
+</div>
+    </div>
+</section>
+
+<style>
+.gallery-box{
+    max-width:950px;
+    height:800px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:30px;
+    border:3px solid #d4af37;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    position:relative;
+}
+
+@media(max-width:768px){
+    .gallery-box{
+        height:420px;
+    }
+}
+#musicBtn{
+    animation: none;
+}
+
+@keyframes rotateMusic{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.slider{
+    display:flex;
+    width: max-content;
+    gap:20px;
+    animation: slideShow 100s linear infinite;
+}
+
+.slider img{
+    width:auto;
+    height:380px;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink:0;
+    border-radius:30px;
+}
+
+@keyframes slideShow{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+</style>
+
+<!-- Map -->
+<section class="map common-bg">
+    <div class="title">विवाहस्थळ</div>
+
+    <iframe
+        src="https://maps.google.com/maps?q=19.771569,75.902042&z=15&output=embed"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+
+    <br>
+
+    <a href="https://www.google.com/maps/dir/?api=1&destination=19.771569,75.902042"
+   class="btn"
+   target="_blank">
+   विवाह स्थळ पाहण्यासाठी इथे क्लिक करा
+</a>
+
+</section>
+
+<section class="video-ashirvad">
+
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="shubhashirvad.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay"></div>
+
+    <div class="video-content">
+        <div class="title">शुभ आशीर्वाद</div>
+
+        <p>आपण सहकुटुंब सहपरिवार उपस्थित राहून</p>
+        <p>वधू - वरांना शुभ आशीर्वाद द्यावेत,</p>
+        <p>ही नम्र विनंती.</p>
+
+        <br>
+
+        <p><strong>समस्त टकले पाटील परिवार</strong></p>
+    </div>
+</section>
+
+<!-- Transparent Music Button -->
+
+<div style="
+    position:fixed;
+    bottom:30px;
+    right:25px;
+    z-index:9999;
+">
+
+    <button id="musicBtn" onclick="toggleMusic()" style="
+        width:55px;
+        height:55px;
+        border:none;
+        border-radius:50%;
+        background:transparent;
+        color:white;
+        font-size:25px;
+        cursor:pointer;
+        box-shadow:0 0 10px rgba(212,175,55,0.95);
+        backdrop-filter: blur(4px);
+    ">
+        🔊
+    </button>
+
+</div>
+
+<!-- Background Music -->
+<audio id="bgMusic" autoplay loop>
+    <source src="Wedding.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let music = document.getElementById("bgMusic");
+
+/* Page load नंतर autoplay try */
+window.onload = function () {
+    music.play().catch(() => {
+        console.log("Autoplay blocked by browser");
+    });
+};
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        document.getElementById("musicBtn").innerHTML = "🔊";
+    } else {
+        music.pause();
+        document.getElementById("musicBtn").innerHTML = "🎵";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".slider");
+
+    slider.style.animationPlayState = "paused";
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                slider.style.animationPlayState = "running";
+            } else {
+                slider.style.animationPlayState = "paused";
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(document.querySelector(".gallery-box"));
+});
+</script>
+</body>
+</html>
